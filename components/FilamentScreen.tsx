@@ -5,7 +5,7 @@ import {
   Model,
   Camera,
 } from "react-native-filament";
-import HiphopGirl from "../assets/models/hiphopgirl.glb";
+import HiphopGirl from "@/assets/models/hiphopgirl.glb";
 
 export function FilamentScreen() {
   return (
