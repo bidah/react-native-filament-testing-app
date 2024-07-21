@@ -1,18 +1,14 @@
-const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
+// Learn more https://docs.expo.io/guides/customizing-metro
+const { getDefaultConfig } = require("expo/metro-config");
 
-const defaultConfig = getDefaultConfig(__dirname);
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
 
-/**
- * Metro configuration
- * https://metrobundler.dev/docs/configuration
- *
- * @type {import('metro-config').MetroConfig}
- */
-const config = {
+module.exports = {
+  ...config,
   resolver: {
     // This makes it possible to import .glb files in your code:
-    assetExts: [...(defaultConfig.resolver?.assetExts || []), "glb"],
+    sourceExts: [...config.resolver.sourceExts, "cjs"],
+    assetExts: [...(config.resolver?.assetExts || []), "glb"],
   },
 };
-
-module.exports = mergeConfig(defaultConfig, config);
