@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bidah.react-native-filament-testing-app"
     },
     "android": {
       "adaptiveIcon": {
