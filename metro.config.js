@@ -9,6 +9,7 @@ module.exports = {
   resolver: {
     // This makes it possible to import .glb files in your code:
     sourceExts: [...config.resolver.sourceExts, "cjs"],
-    assetExts: [...(config.resolver?.assetExts || []), "glb"],
+    assetExts: ["glb", "ktx", "filamat", ...config.resolver.assetExts],
+    assets: ["./assets/models"],
   },
 };

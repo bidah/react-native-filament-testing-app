@@ -16,10 +16,21 @@ export function FilamentScreen() {
         <DefaultLight />
 
         {/* 📦 A 3D model */}
-        <Model source={HiphopGirl} />
+        <Model
+          transformToUnitCube
+          // URL setup
+          //   source={{
+          //     uri: "https://github.com/margelo/react-native-filament/raw/main/package/example/Shared/assets/hiphopgirl.glb",
+          //   }}
+          //   source={{
+          //     uri: "hiphopgirl.glb",
+          //   }}
+          source={HiphopGirl}
+          rotate={[3, 2, 5]}
+        />
 
         {/* 📹 A camera through which the scene is observed and projected onto the view */}
-        <Camera />
+        <Camera cameraPosition={[0, 0, 5]} cameraTarget={[0, 0, 0]} />
       </FilamentView>
     </FilamentScene>
   );
