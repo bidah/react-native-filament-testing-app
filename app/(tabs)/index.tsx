@@ -11,9 +11,9 @@ import { AnimatedRotateSharedValues } from "@/components/AnimatedRotateSharedVal
 export default function HomeScreen() {
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
-      {/* <FilamentScreen /> */}
+      <FilamentScreen />
       {/* <RotationScreen /> */}
-      <AnimatedRotateSharedValues />
+      {/* <AnimatedRotateSharedValues /> */}
     </View>
   );
 }

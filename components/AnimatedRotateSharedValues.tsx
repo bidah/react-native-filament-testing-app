@@ -33,31 +33,29 @@ function Renderer() {
   }, [rotation]);
 
   return (
-    <FilamentScene
-      style={styles.filamentView}
-      enableTransparentRendering={false}
-    >
-      <FilamentView renderCallback={renderCallback}>
-        <Camera />
-        <DefaultLight />
-        <Skybox colorInHex="#88defb" />
+    <FilamentView renderCallback={renderCallback}>
+      <Camera />
+      <DefaultLight />
+      <Skybox colorInHex="#88defb" />
 
-        <Model source={DroneGlb} transformToUnitCube scale={[3, 3, 3]}>
-          {/* Note: we apply the rotation individually as the above transformations are multiplying, while the one for the rotation, shouldn't */}
-          <ModelInstance
-            index={0}
-            rotate={rotation}
-            multiplyWithCurrentTransform={false}
-          />
-        </Model>
-      </FilamentView>
-    </FilamentScene>
+      <Model source={DroneGlb} transformToUnitCube scale={[2, 2, 2]}>
+        {/* Note: we apply the rotation individually as the above transformations are multiplying, while the one for the rotation, shouldn't */}
+        <ModelInstance
+          index={0}
+          rotate={rotation}
+          multiplyWithCurrentTransform={false}
+        />
+      </Model>
+    </FilamentView>
   );
 }
 
 export function AnimatedRotateSharedValues() {
   return (
-    <FilamentScene>
+    <FilamentScene
+      style={styles.filamentView}
+      enableTransparentRendering={false}
+    >
       <Renderer />
     </FilamentScene>
   );
